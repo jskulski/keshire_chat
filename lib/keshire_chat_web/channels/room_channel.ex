@@ -9,8 +9,23 @@ defmodule KeshireChatWeb.RoomChannel do
     {:error, %{reason: "you can only join the lobby"}}
   end
 
-  def handle_in("new_message", body, socket) do
-    broadcast! socket, "new_message", body
+  def handle_in("app:new_message", payload, socket) do
+    broadcast! socket, "app:new_message", payload
+    broadcast! socket, "sms:new_message", payload
+    broadcast! socket, "pn:new_message", payload
     {:noreply, socket}
   end
+  def handle_in("sms:new_message", payload, socket) do
+    broadcast! socket, "app:new_message", payload
+    broadcast! socket, "sms:new_message", payload
+    broadcast! socket, "pn:new_message", payload
+    {:noreply, socket}
+  end
+  def handle_in("pn:new_message", payload, socket) do
+    broadcast! socket, "app:new_message", payload
+    broadcast! socket, "sms:new_message", payload
+    broadcast! socket, "pn:new_message", payload
+    {:noreply, socket}
+  end
+
 end

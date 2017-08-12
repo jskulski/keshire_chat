@@ -61,19 +61,61 @@ channel.join()
 
 export default socket
 
-// Subscription
-channel.on("new_message", payload => {
-  messagesContainer.append(`<br/>[${Date()}] ${payload.body}`)
-})
 
 // UI stuff
-let chatInput = $("#chat-input");
-let messagesContainer = $("#messages");
+let usernameInput = $('#username-input');
 
-chatInput.on("keypress", event => {
-  if(event.keyCode === 13){
-    channel.push("new_message", {body:chatInput.val()});
-    chatInput.val("");
+let appInput = $("#app-input");
+let smsInput = $("#sms-input");
+let pnInput = $("#pn-input");
+
+let appSend = $("#app-send");
+let smsSend = $("#sms-send");
+let pnSend = $("#pn-send");
+
+let appContainer = $("#app-container");
+let smsContainer = $("#sms-container")
+let pnContainer = $("#pn-container")
+
+function makePresenter(container) {
+  return function makePresenterFn(payload) {
+    const date = new Date();
+    const time = date.toLocaleTimeString()
+    container.append(`<br/>[${time} - ${payload.username}] ${payload.body}`)
   }
-});
+}
 
+const appPresenter = makePresenter(appContainer)
+const smsPresenter = makePresenter(smsContainer)
+const pnPresenter = makePresenter(pnContainer)
+
+function makeSendHandler(from, usernameInput, bodyInput) {
+  return function makeSendHandlerFn(event) {
+    if (event.keyCode === 13) {
+      console.info("Trying to send")
+      channel.push(`${from}:new_message`, {
+        body: bodyInput.val(),
+        username: usernameInput.val(),
+        from: from,
+      })
+      appInput.val("")
+    }
+  }
+}
+
+const appSendHandler = makeSendHandler('app', usernameInput, appInput)
+const smsSendHandler = makeSendHandler('sms', usernameInput, smsInput)
+const pnSendHandler = makeSendHandler('pn', usernameInput, pnInput)
+
+// Subscriptions
+appInput.on("keypress", appSendHandler);
+smsInput.on("keypress", smsSendHandler);
+pnInput.on("keypress", pnSendHandler);
+
+appSend.on("click", appSendHandler);
+smsSend.on("click", smsSendHandler);
+pnSend.on("click", pnSendHandler);
+
+channel.on("app:new_message", appPresenter);
+channel.on("sms:new_message", smsPresenter);
+channel.on("pn:new_message", pnPresenter);

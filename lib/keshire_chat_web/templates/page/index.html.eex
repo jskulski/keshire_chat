@@ -1,2 +1,38 @@
-<div id="messages"></div>
-<input id="chat-input" type="text"></input>
+Hello, what is your: <input id="username-input" placeholder='Username' type="text"></input>
+<div>
+  <label for="pn-config-input">Push Notifications</label>
+  <input id="pn-config-input" type="checkbox" />
+</div>
+
+<div>
+  <label for="sms-config-input">SMS Notification</label>
+  <input id="sms-config-input" type="checkbox" />
+</div>
+
+<div>
+  <label for="pn-config-input">App Chat</label>
+  <input id="chat-config-input" type="checkbox" disabled="disabled" checked="checked"/>
+</div>
+
+<hr>
+
+<div>
+  <h2>App</h2>
+  <div id="app-container"></div>
+  <input id="app-input" type="text"></input>
+  <button id="app-send">Send</button>
+</div>
+
+<div>
+  <h2>SMS</h2>
+  <div id="sms-container"></div>
+  <input id="sms-input" type="text"></input>
+  <button id="sms-send">Send</button>
+</div>
+
+<div>
+  <h2>Push Notifications</h2>
+  <div id="pn-container"></div>
+  <input id="pn-input" type="text"></input>
+  <button id="pn-send">Send</button>
+</div>

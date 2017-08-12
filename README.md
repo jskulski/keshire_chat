@@ -34,10 +34,13 @@ send message POST /messages
 ## Roadmap
 
 - [X] Do initial tutorial
+- [X] Add username
+- [ ] Add config panel
 
 ## Learn more
 
-  * Elixir Cheat Sheet: https://learnxinyminutes.com/docs/elixir/
+  * Crash Coarse: https://elixir-lang.org/crash-course.html
+  * Cheat Sheet: https://learnxinyminutes.com/docs/elixir/
   * Official website: http://www.phoenixframework.org/
   * Guides: http://phoenixframework.org/docs/overview
   * Docs: https://hexdocs.pm/phoenix
@@ -47,7 +50,7 @@ send message POST /messages
 ## Glossary
 
 UserKey: Unique string identifying an account
-Room:
+Room
 
 ## Principles
 
