@@ -16,19 +16,43 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
 Prereqs:
 - https://elixir-lang.org/install.html#mac-os-x
 
+## API Sketch
+
+(Delete this after self-documentation begins!)
+
+### Python SDK:
+```
+```
+
+### REST API
+join /join
+/leave
+retrieve messages GET /messages
+send message POST /messages
+
+
+## Roadmap
+
+- [X] Do initial tutorial
+
 ## Learn more
 
+  * Elixir Cheat Sheet: https://learnxinyminutes.com/docs/elixir/
   * Official website: http://www.phoenixframework.org/
   * Guides: http://phoenixframework.org/docs/overview
   * Docs: https://hexdocs.pm/phoenix
   * Mailing list: http://groups.google.com/group/phoenix-talk
   * Source: https://github.com/phoenixframework/phoenix
 
+## Glossary
+
+UserKey: Unique string identifying an account
+Room:
+
 ## Principles
 
 - Use the right tool. If it doesn't exist, build it.
-- Keep debugging painless
-- Tighten feedback loops
-- Integrate early, release often
-- Solve the general case
-- 99% Work, 1% Metawork. Stay focused but improve everyday
+- Keep development painless, remove hurdles, tighten feedback loop
+- Communicate early, release often, integrate frequently
+- Solve for the general case after you solve the specific case
+- 99% Work, 1% Metawork. Stay focused but improve every. single. day.
