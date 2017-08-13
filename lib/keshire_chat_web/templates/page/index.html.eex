@@ -1,17 +1,17 @@
 Hello, what is your: <input id="username-input" placeholder='Username' type="text"></input>
 <div>
-  <label for="pn-config-input">Push Notifications</label>
-  <input id="pn-config-input" type="checkbox" />
+  <label for="pn-notify">Push Notifications</label>
+  <input id="pn-notify" type="checkbox" />
 </div>
 
 <div>
-  <label for="sms-config-input">SMS Notification</label>
-  <input id="sms-config-input" type="checkbox" />
+  <label for="sms-notify">SMS Notification</label>
+  <input id="sms-notify" type="checkbox" />
 </div>
 
 <div>
-  <label for="pn-config-input">App Chat</label>
-  <input id="chat-config-input" type="checkbox" disabled="disabled" checked="checked"/>
+  <label for="pn-notify">App Chat</label>
+  <input id="chat-notify" type="checkbox" disabled="disabled" checked="checked"/>
 </div>
 
 <hr>

@@ -77,6 +77,25 @@ let appContainer = $("#app-container");
 let smsContainer = $("#sms-container")
 let pnContainer = $("#pn-container")
 
+// DISABLED - let appNotify = $('#app-notify')
+let smsNotify = $('#sms-notify')
+let pnNotify = $('#pn-notify')
+
+
+function makeRoomToggle(from) {
+  return function makeRoomToggleFn(event) {
+    if ($(event.target).is(':checked')) {
+      channel.push(`join:${from}`, {})
+    }
+    else {
+      channel.push(`leave:${from}`, {})
+    }
+  }
+}
+
+smsNotify.on('change', makeRoomToggle('sms'))
+pnNotify.on('change', makeRoomToggle('pn'))
+
 function makePresenter(container) {
   return function makePresenterFn(payload) {
     const date = new Date();
