@@ -35,7 +35,7 @@ send message POST /messages
 
 - [X] Do initial tutorial
 - [X] Add username
-- [ ] Add config panel
+- [X] Add config panel
 
 ## Learn more
 
@@ -54,8 +54,8 @@ Room
 
 ## Principles
 
-- Use the right tool. If it doesn't exist, build it.
-- Keep development painless, remove hurdles, tighten feedback loop
+- Define the problem, then find a tool that fits it. If it doesn't exist, build it.
+- Keep development painless, remove hurdles, tighten feedback loops
 - Communicate early, release often, integrate frequently
 - Solve for the general case after you solve the specific case
-- 99% Work, 1% Metawork. Stay focused but improve every. single. day.
+- 99% Work, 1% Metawork. Stay focused and improve every. single. day.
